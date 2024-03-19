@@ -2,8 +2,6 @@
 
 #include"Event.h"
 
-#include<sstream>
-
 namespace aSimpleEngine {
 
 	class SE_API WindowResizeEvent: public Event

@@ -1,13 +1,11 @@
 #pragma once
-#include"../Core.h"
-#include<string>
-#include<functional>
+#include"aSimpleEngine/Core.h"
 
 namespace aSimpleEngine
 {
 	enum EventType
 	{
-		None = 0,
+		None_Type = 0,
 		WindowClose, WindowResize, WindowFocus, WindowLosFoucus, WindowMoved,
 		AppTick, AppUpdate, AppRender,
 		KeyPressed, KeyReleased,
@@ -15,7 +13,7 @@ namespace aSimpleEngine
 	};
 	enum EventCategory
 	{
-		None = 0,//None 被显式地初始化为 0
+		None_Category = 0,//None 被显式地初始化为 0
 		EventCategoryApplication = BIT(0),//通过 BIT 宏来初始化
 		EventCategoryInput = BIT(1),
 		EventCategoryKeyboard = BIT(2),

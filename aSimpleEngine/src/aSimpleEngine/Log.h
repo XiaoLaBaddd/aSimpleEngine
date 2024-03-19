@@ -1,8 +1,9 @@
 #pragma once
-#include<memory>//使用了std::shared_ptr
+//#include<memory>//使用了std::shared_ptr
 #include"Core.h"
 #include "spdlog/spdlog.h"//include第三方库
 #include "spdlog/sinks/stdout_color_sinks.h"
+#include"spdlog/fmt/ostr.h"
 
 namespace aSimpleEngine {
 	

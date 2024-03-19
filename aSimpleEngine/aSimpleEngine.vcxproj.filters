@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
     <Filter Include="aSimpleEngine">
       <UniqueIdentifier>{C6525174-3213-CDAA-FB4D-162867CD1187}</UniqueIdentifier>
     </Filter>
+    <Filter Include="aSimpleEngine\Event">
+      <UniqueIdentifier>{9750D7D0-03B2-B4DE-8C1F-FB90F87FEB9D}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\aSimpleEngine.h" />
     <ClInclude Include="src\aSimpleEngine\Application.h">
       <Filter>aSimpleEngine</Filter>
@@ -16,20 +28,36 @@
     <ClInclude Include="src\aSimpleEngine\EntryPoint.h">
       <Filter>aSimpleEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\aSimpleEngine\Event\ApplicationEvent.h">
+      <Filter>aSimpleEngine\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\aSimpleEngine\Event\Event.h">
+      <Filter>aSimpleEngine\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\aSimpleEngine\Event\KeyEvent.h">
+      <Filter>aSimpleEngine\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\aSimpleEngine\Event\MouseEvent.h">
+      <Filter>aSimpleEngine\Event</Filter>
+    </ClInclude>
     <ClInclude Include="src\aSimpleEngine\Log.h">
       <Filter>aSimpleEngine</Filter>
     </ClInclude>
-    <ClInclude Include="src\aSimpleEngine\Event\ApplicationEvent.h" />
-    <ClInclude Include="src\aSimpleEngine\Event\KeyEvent.h" />
-    <ClInclude Include="src\aSimpleEngine\Event\MouseEvent.h" />
-    <ClInclude Include="src\aSimpleEngine\Event\Event.h" />
+    <ClInclude Include="src\aSimpleEngine\Window.h">
+      <Filter>aSimpleEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sepch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\aSimpleEngine\Application.cpp">
       <Filter>aSimpleEngine</Filter>
     </ClCompile>
     <ClCompile Include="src\aSimpleEngine\Log.cpp">
       <Filter>aSimpleEngine</Filter>
     </ClCompile>
+    <ClCompile Include="src\sepch.cpp" />
   </ItemGroup>
 </Project>

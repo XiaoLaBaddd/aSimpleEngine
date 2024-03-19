@@ -7,8 +7,13 @@ workspace "aSimpleEngine"
 		"Dist"
 	}
 
-outputdir="%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "aSimpleEngine/vendor/GLFW/include"
+
+--include GLFW中的premake5文件
+include "aSimpleEngine/vendor/GLFW"
 
 project "aSimpleEngine"
 	location "aSimpleEngine"
@@ -17,6 +22,9 @@ project "aSimpleEngine"
 	targetdir("bin/"..outputdir.."/%{prj.name}")
 	objdir("bin-int/"..outputdir.."/%{prj.name}")
 
+	pchheader "sepch.h"
+	pchsource "aSimpleEngine/src/sepch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
@@ -24,7 +32,14 @@ project "aSimpleEngine"
 	}
 	includedirs
 	{
-		"aSimpleEngine/vendor/spdlog/include"
+		"%{prj.name}/src",
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 	filter "system:windows"
 		cppdialect "C++17"

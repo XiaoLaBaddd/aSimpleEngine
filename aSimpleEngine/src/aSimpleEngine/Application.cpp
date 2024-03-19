@@ -1,11 +1,24 @@
+#include "sepch.h"
 #include "Application.h"
-namespace aSimpleEngine {
 
+#include"aSimpleEngine/Event/ApplicationEvent.h"
+#include"aSimpleEngine/Log.h"
+
+namespace aSimpleEngine {
+	Application::Application()
+	{
+		m_Window = std::unique_ptr<Window>(Window::Create());
+	}
+	Application::~Application(){}
+	
+	
 	void Application::Run()
 	{
-		while (true);
+		while (m_Running)
+		{
+			m_Window->OnUpdate();
+		}
 	}
-	Application::Application(){}
-	Application::~Application(){}
+	
 
 }
