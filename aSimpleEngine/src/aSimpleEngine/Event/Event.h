@@ -69,6 +69,7 @@ namespace aSimpleEngine
 		template<typename T>
 		bool Dispatch(EventFn<T> func)
 		{
+			//检查传入事件的类型是否是使用模板的类型
 			if (m_Event.GetEventType() == T::GetStaticType())
 			{
 				m_Event.m_Handled = func(*(T*)&m_Event);

@@ -7,6 +7,7 @@
 
 namespace aSimpleEngine {
 
+
 	struct WindowProps
 	{
 		std::string Title;
@@ -23,6 +24,8 @@ namespace aSimpleEngine {
 	class SE_API Window
 	{
 	public:
+		//std::function 是一个通用的、多态的函数封装器，它可以存储、复制和调用任何可调用的目标
+		//EventCallbackFn 的好处是，你可以将这个类型作为参数传递给函数，或者作为类成员变量，从而允许调用者传递任何满足这个签名的可调用的对象（函数、lambda、函数对象等）
 		using EventCallbackFn = std::function<void(Event&)>;
 
 		virtual ~Window(){}
@@ -33,7 +36,7 @@ namespace aSimpleEngine {
 		virtual unsigned int GetHeight() const = 0;
 
 		//window属性
-		virtual void SetEventCallback(const EventCallbackFn& callback) = 0;
+		virtual void SetEventCallback(const EventCallbackFn& callback) = 0;//将窗口上发生的事件传回Application
 		virtual void SetVSync(bool enabled) = 0;
 		virtual bool IsVSync() const = 0;
 
